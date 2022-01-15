@@ -1,5 +1,4 @@
-﻿## 2 - Windos Forms
+﻿## 3 - Herramienta GropuBox
 
-Hemos hecho algunos cambios para personalizar nuestra app
 
 
