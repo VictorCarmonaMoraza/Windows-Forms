@@ -1,9 +1,5 @@
-﻿## 1- Creacion del proyecto
+﻿## 2 - Windos Forms
 
-Lo primero que hemos hecho ha sido la creacion de una aplicación de escritorio a la cual le daremos
-en los siguientes subidas.
+Hemos hecho algunos cambios para personalizar nuestra app
 
-Si creamos otro formulario y queremos decirle a visaul cual queremos ejecutar debemos modificar:
-Application.Run(new Form1());
 
-new Form1() se cambiara por el queremos utilizar
