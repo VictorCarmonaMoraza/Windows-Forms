@@ -48,6 +48,8 @@ namespace AppEscitorio
             this.textBoxApellido = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonAgregar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,6 +73,8 @@ namespace AppEscitorio
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.BackColor = System.Drawing.Color.DarkKhaki;
+            this.groupBox2.Controls.Add(this.buttonCancelar);
+            this.groupBox2.Controls.Add(this.buttonAgregar);
             this.groupBox2.Controls.Add(this.labelEmail);
             this.groupBox2.Controls.Add(this.textBoxEmail);
             this.groupBox2.Controls.Add(this.labelApellido);
@@ -184,7 +188,7 @@ namespace AppEscitorio
             // textBoxDNI
             // 
             this.textBoxDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDNI.Location = new System.Drawing.Point(12, 291);
+            this.textBoxDNI.Location = new System.Drawing.Point(12, 250);
             this.textBoxDNI.Multiline = true;
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(203, 33);
@@ -196,7 +200,7 @@ namespace AppEscitorio
             this.labelDNI.AutoSize = true;
             this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDNI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelDNI.Location = new System.Drawing.Point(12, 263);
+            this.labelDNI.Location = new System.Drawing.Point(12, 222);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(40, 20);
             this.labelDNI.TabIndex = 6;
@@ -208,7 +212,7 @@ namespace AppEscitorio
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelNombre.Location = new System.Drawing.Point(257, 263);
+            this.labelNombre.Location = new System.Drawing.Point(257, 222);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(71, 20);
             this.labelNombre.TabIndex = 8;
@@ -217,7 +221,7 @@ namespace AppEscitorio
             // textBoxNombre
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(257, 291);
+            this.textBoxNombre.Location = new System.Drawing.Point(257, 250);
             this.textBoxNombre.Multiline = true;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(203, 33);
@@ -229,7 +233,7 @@ namespace AppEscitorio
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelApellido.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelApellido.Location = new System.Drawing.Point(12, 368);
+            this.labelApellido.Location = new System.Drawing.Point(12, 296);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(73, 20);
             this.labelApellido.TabIndex = 10;
@@ -238,7 +242,7 @@ namespace AppEscitorio
             // textBoxApellido
             // 
             this.textBoxApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxApellido.Location = new System.Drawing.Point(12, 396);
+            this.textBoxApellido.Location = new System.Drawing.Point(12, 324);
             this.textBoxApellido.Multiline = true;
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(203, 33);
@@ -250,7 +254,7 @@ namespace AppEscitorio
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelEmail.Location = new System.Drawing.Point(257, 368);
+            this.labelEmail.Location = new System.Drawing.Point(257, 296);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(53, 20);
             this.labelEmail.TabIndex = 12;
@@ -259,11 +263,41 @@ namespace AppEscitorio
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(257, 396);
+            this.textBoxEmail.Location = new System.Drawing.Point(257, 324);
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(203, 33);
             this.textBoxEmail.TabIndex = 11;
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancelar.FlatAppearance.BorderSize = 0;
+            this.buttonCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.buttonCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelar.Image = global::AppEscitorio.Properties.Resources.Cancelar;
+            this.buttonCancelar.Location = new System.Drawing.Point(298, 382);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(94, 46);
+            this.buttonCancelar.TabIndex = 14;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
+            // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAgregar.FlatAppearance.BorderSize = 0;
+            this.buttonAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.buttonAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregar.Image = global::AppEscitorio.Properties.Resources.Agregar;
+            this.buttonAgregar.Location = new System.Drawing.Point(55, 382);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(94, 46);
+            this.buttonAgregar.TabIndex = 13;
+            this.buttonAgregar.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -312,6 +346,8 @@ namespace AppEscitorio
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label labelDNI;
         private System.Windows.Forms.TextBox textBoxDNI;
+        private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.Button buttonCancelar;
     }
 }
 

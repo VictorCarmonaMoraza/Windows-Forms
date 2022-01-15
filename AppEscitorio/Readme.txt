@@ -1,7 +1,8 @@
-﻿## 5 - Control TextBox
+﻿## 6 - Control Button
 
-Se agregan textbox para poder introducir datos, tambien se organizanlabel
-con textbox y se modifica tamaño de la letra para los textbox
+Se agregan boton de agregar y cancelar con unos iconos descargados de la red de la pagina:
+
+https://fonts.google.com/icons?selected=Material+Icons:anchor&icon.query=cancel
 
 
 
