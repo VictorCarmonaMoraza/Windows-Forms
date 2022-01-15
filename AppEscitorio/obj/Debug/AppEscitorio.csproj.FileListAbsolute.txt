@@ -7,3 +7,4 @@ C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\AppEsci
 C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\AppEscitorio\obj\Debug\AppEscitorio.csproj.CoreCompileInputs.cache
 C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\AppEscitorio\obj\Debug\AppEscitorio.exe
 C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\AppEscitorio\obj\Debug\AppEscitorio.pdb
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\AppEscitorio\obj\Debug\AppEscitorio.csproj.AssemblyReference.cache

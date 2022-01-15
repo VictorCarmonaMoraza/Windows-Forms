@@ -1,8 +1,7 @@
-﻿## 6 - Control Button
+﻿## 7-Control PictureBox
 
-Se agregan boton de agregar y cancelar con unos iconos descargados de la red de la pagina:
-
-https://fonts.google.com/icons?selected=Material+Icons:anchor&icon.query=cancel
+Este control carga imagenes de nuestro pc.Hemos modificado los tabIndex para que se llamen 
+ordenadamente.
 
 
 

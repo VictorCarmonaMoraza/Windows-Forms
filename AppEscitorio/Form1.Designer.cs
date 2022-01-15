@@ -48,12 +48,18 @@ namespace AppEscitorio
             this.textBoxApellido = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.buttonElliminar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonAgregar = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,6 +67,7 @@ namespace AppEscitorio
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 2);
             this.groupBox1.Name = "groupBox1";
@@ -73,6 +80,7 @@ namespace AppEscitorio
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.BackColor = System.Drawing.Color.DarkKhaki;
+            this.groupBox2.Controls.Add(this.buttonElliminar);
             this.groupBox2.Controls.Add(this.buttonCancelar);
             this.groupBox2.Controls.Add(this.buttonAgregar);
             this.groupBox2.Controls.Add(this.labelEmail);
@@ -158,6 +166,7 @@ namespace AppEscitorio
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.LemonChiffon;
+            this.groupBox5.Controls.Add(this.pictureBox);
             this.groupBox5.Location = new System.Drawing.Point(161, 44);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 156);
@@ -192,7 +201,7 @@ namespace AppEscitorio
             this.textBoxDNI.Multiline = true;
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(203, 33);
-            this.textBoxDNI.TabIndex = 5;
+            this.textBoxDNI.TabIndex = 1;
             // 
             // labelDNI
             // 
@@ -225,7 +234,7 @@ namespace AppEscitorio
             this.textBoxNombre.Multiline = true;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(203, 33);
-            this.textBoxNombre.TabIndex = 7;
+            this.textBoxNombre.TabIndex = 2;
             // 
             // labelApellido
             // 
@@ -246,7 +255,7 @@ namespace AppEscitorio
             this.textBoxApellido.Multiline = true;
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(203, 33);
-            this.textBoxApellido.TabIndex = 9;
+            this.textBoxApellido.TabIndex = 3;
             // 
             // labelEmail
             // 
@@ -267,7 +276,22 @@ namespace AppEscitorio
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(203, 33);
-            this.textBoxEmail.TabIndex = 11;
+            this.textBoxEmail.TabIndex = 4;
+            // 
+            // buttonElliminar
+            // 
+            this.buttonElliminar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonElliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonElliminar.FlatAppearance.BorderSize = 0;
+            this.buttonElliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.buttonElliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonElliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonElliminar.Image = global::AppEscitorio.Properties.Resources.Delete;
+            this.buttonElliminar.Location = new System.Drawing.Point(181, 382);
+            this.buttonElliminar.Name = "buttonElliminar";
+            this.buttonElliminar.Size = new System.Drawing.Size(116, 46);
+            this.buttonElliminar.TabIndex = 6;
+            this.buttonElliminar.UseVisualStyleBackColor = false;
             // 
             // buttonCancelar
             // 
@@ -278,10 +302,10 @@ namespace AppEscitorio
             this.buttonCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Image = global::AppEscitorio.Properties.Resources.Cancelar;
-            this.buttonCancelar.Location = new System.Drawing.Point(298, 382);
+            this.buttonCancelar.Location = new System.Drawing.Point(355, 382);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 46);
-            this.buttonCancelar.TabIndex = 14;
+            this.buttonCancelar.Size = new System.Drawing.Size(105, 46);
+            this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.UseVisualStyleBackColor = false;
             // 
             // buttonAgregar
@@ -293,11 +317,33 @@ namespace AppEscitorio
             this.buttonAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAgregar.Image = global::AppEscitorio.Properties.Resources.Agregar;
-            this.buttonAgregar.Location = new System.Drawing.Point(55, 382);
+            this.buttonAgregar.Location = new System.Drawing.Point(16, 382);
             this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(94, 46);
-            this.buttonAgregar.TabIndex = 13;
+            this.buttonAgregar.Size = new System.Drawing.Size(107, 46);
+            this.buttonAgregar.TabIndex = 5;
             this.buttonAgregar.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox.Image = global::AppEscitorio.Properties.Resources.bbdd;
+            this.pictureBox.Location = new System.Drawing.Point(20, 19);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(160, 118);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AppEscitorio.Properties.Resources.bbdd;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 81);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -322,6 +368,9 @@ namespace AppEscitorio
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,6 +397,9 @@ namespace AppEscitorio
         private System.Windows.Forms.TextBox textBoxDNI;
         private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button buttonElliminar;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

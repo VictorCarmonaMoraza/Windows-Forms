@@ -82,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
+    <None Include="Resources\bbdd.jpg" />
+    <None Include="Resources\Delete.png" />
     <None Include="Resources\Cancelar.png" />
     <None Include="Resources\Agregar.png" />
   </ItemGroup>
