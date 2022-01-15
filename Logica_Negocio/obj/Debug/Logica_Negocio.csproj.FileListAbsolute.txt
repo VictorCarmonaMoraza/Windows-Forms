@@ -1,0 +1,6 @@
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Logica_Negocio\bin\Debug\Logica_Negocio.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Logica_Negocio\bin\Debug\Logica_Negocio.pdb
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Logica_Negocio\obj\Debug\Logica_Negocio.csproj.AssemblyReference.cache
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Logica_Negocio\obj\Debug\Logica_Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Logica_Negocio\obj\Debug\Logica_Negocio.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Logica_Negocio\obj\Debug\Logica_Negocio.pdb

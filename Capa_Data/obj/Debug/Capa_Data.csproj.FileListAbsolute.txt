@@ -1,0 +1,6 @@
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Capa_Data\bin\Debug\Capa_Data.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Capa_Data\bin\Debug\Capa_Data.pdb
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Capa_Data\obj\Debug\Capa_Data.csproj.AssemblyReference.cache
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Capa_Data\obj\Debug\Capa_Data.csproj.CoreCompileInputs.cache
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Capa_Data\obj\Debug\Capa_Data.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Aplicacion escritorio\AppEscitorio\Capa_Data\obj\Debug\Capa_Data.pdb

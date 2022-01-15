@@ -87,5 +87,11 @@
     <None Include="Resources\Cancelar.png" />
     <None Include="Resources\Agregar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logica_Negocio\Logica_Negocio.csproj">
+      <Project>{54f463bf-7cc0-4361-89c5-9381d0854cfd}</Project>
+      <Name>Logica_Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

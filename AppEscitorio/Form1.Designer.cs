@@ -51,14 +51,14 @@ namespace AppEscitorio
             this.buttonElliminar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonAgregar = new System.Windows.Forms.Button();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,7 +136,6 @@ namespace AppEscitorio
             this.label1.Size = new System.Drawing.Size(258, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sistema de estudiantes";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -166,7 +165,7 @@ namespace AppEscitorio
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.LemonChiffon;
-            this.groupBox5.Controls.Add(this.pictureBox);
+            this.groupBox5.Controls.Add(this.pictureBoxImage);
             this.groupBox5.Location = new System.Drawing.Point(161, 44);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 156);
@@ -323,17 +322,18 @@ namespace AppEscitorio
             this.buttonAgregar.TabIndex = 5;
             this.buttonAgregar.UseVisualStyleBackColor = false;
             // 
-            // pictureBox
+            // pictureBoxImage
             // 
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox.Image = global::AppEscitorio.Properties.Resources.bbdd;
-            this.pictureBox.Location = new System.Drawing.Point(20, 19);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(160, 118);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
+            this.pictureBoxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxImage.Image = global::AppEscitorio.Properties.Resources.bbdd;
+            this.pictureBoxImage.Location = new System.Drawing.Point(20, 19);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(160, 118);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.TabIndex = 0;
+            this.pictureBoxImage.TabStop = false;
+            this.pictureBoxImage.Click += new System.EventHandler(this.pictureBoxImage_Click);
             // 
             // pictureBox1
             // 
@@ -369,7 +369,7 @@ namespace AppEscitorio
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -398,7 +398,7 @@ namespace AppEscitorio
         private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonElliminar;
-        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
