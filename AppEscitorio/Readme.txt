@@ -1,6 +1,7 @@
-﻿## 4 - Control Label
+﻿## 5 - Control TextBox
 
-Se agregan unas label a nuestro formulario redimensionandolas
+Se agregan textbox para poder introducir datos, tambien se organizanlabel
+con textbox y se modifica tamaño de la letra para los textbox
 
 
 
