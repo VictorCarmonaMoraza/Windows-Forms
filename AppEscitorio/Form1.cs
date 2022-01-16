@@ -23,7 +23,7 @@ namespace AppEscitorio
         private void pictureBoxImage_Click(object sender, EventArgs e)
         {
             //pictureBoxImage : es el nombre que tiene la imagen 
-            estudiantes.CargarImagen(pictureBoxImage);
+            estudiantes.uploadImage.CargarImagen(pictureBoxImage);
         }
 
         private void textBoxDNI_TextChanged(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace AppEscitorio
 
         private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            estudiantes.textBoxEvent.textKeyPress(e);
         }
 
         private void textBoxApellido_TextChanged(object sender, EventArgs e)

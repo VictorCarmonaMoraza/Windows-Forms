@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Estudiantes.cs" />
+    <Compile Include="Library\Libreria.cs" />
+    <Compile Include="Library\TextBoxEvent.cs" />
     <Compile Include="Library\UploadImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
