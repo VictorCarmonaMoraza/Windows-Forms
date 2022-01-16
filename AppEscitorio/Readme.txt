@@ -1,7 +1,7 @@
-﻿## 9-Obteniendo imagenes del directorio de la pc
+﻿## 10-Evento TextChanged del TextBox
 
-Hemos creado un metodo para abrir una ventana y cargar imagenes que se abrira haciendo click
-sobre la imagen de cuadro
+Se crean los metodos textChanged y textKeyPress para todos los campos y se agrega la
+validacion que cuando se escriba en el campo de texto cambie el color de la label 
 
 
 
