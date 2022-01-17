@@ -24,7 +24,12 @@ namespace AppEscitorio
             listTextBox.Add(textBoxNombre);
             listTextBox.Add(textBoxApellido);
             listTextBox.Add(textBoxEmail);
-            estudiantes = new Estudiantes(listTextBox);
+            var listLabel = new List<Label>();
+            listLabel.Add(labelDNI);
+            listLabel.Add(labelNombre);
+            listLabel.Add(labelApellido);
+            listLabel.Add(labelEmail);
+            estudiantes = new Estudiantes(listTextBox, listLabel);
         }
 
         private void pictureBoxImage_Click(object sender, EventArgs e)
@@ -90,11 +95,6 @@ namespace AppEscitorio
             estudiantes.textBoxEvent.textKeyPress(e);
         }
 
-        private void textBoxEmail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
             //Si la propiedad es igual a vacio
@@ -107,6 +107,11 @@ namespace AppEscitorio
                 labelEmail.ForeColor = Color.Green;
                 labelEmail.Text = "Email";
             }
+        }
+
+        private void buttonAgregar_Click(object sender, EventArgs e)
+        {
+            estudiantes.Registrar();
         }
     }
 }

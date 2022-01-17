@@ -51,9 +51,9 @@ namespace AppEscitorio
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -118,7 +118,7 @@ namespace AppEscitorio
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(0, 227);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(488, 470);
+            this.groupBox2.Size = new System.Drawing.Size(522, 470);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -166,39 +166,39 @@ namespace AppEscitorio
             this.buttonAgregar.Size = new System.Drawing.Size(107, 46);
             this.buttonAgregar.TabIndex = 5;
             this.buttonAgregar.UseVisualStyleBackColor = false;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // labelEmail
             // 
             this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelEmail.Location = new System.Drawing.Point(257, 296);
+            this.labelEmail.Location = new System.Drawing.Point(273, 296);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(53, 20);
+            this.labelEmail.Size = new System.Drawing.Size(50, 18);
             this.labelEmail.TabIndex = 12;
             this.labelEmail.Text = "Email";
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(257, 324);
+            this.textBoxEmail.Location = new System.Drawing.Point(272, 324);
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(203, 33);
             this.textBoxEmail.TabIndex = 4;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
-            this.textBoxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEmail_KeyPress);
             // 
             // labelApellido
             // 
             this.labelApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelApellido.AutoSize = true;
-            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelApellido.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelApellido.Location = new System.Drawing.Point(12, 296);
+            this.labelApellido.Location = new System.Drawing.Point(13, 296);
             this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(73, 20);
+            this.labelApellido.Size = new System.Drawing.Size(67, 18);
             this.labelApellido.TabIndex = 10;
             this.labelApellido.Text = "Apellido";
             // 
@@ -217,18 +217,18 @@ namespace AppEscitorio
             // 
             this.labelNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelNombre.Location = new System.Drawing.Point(257, 222);
+            this.labelNombre.Location = new System.Drawing.Point(273, 222);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(71, 20);
+            this.labelNombre.Size = new System.Drawing.Size(68, 18);
             this.labelNombre.TabIndex = 8;
             this.labelNombre.Text = "Nombre";
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(257, 250);
+            this.textBoxNombre.Location = new System.Drawing.Point(272, 250);
             this.textBoxNombre.Multiline = true;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(203, 33);
@@ -240,11 +240,11 @@ namespace AppEscitorio
             // 
             this.labelDNI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDNI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelDNI.Location = new System.Drawing.Point(12, 222);
+            this.labelDNI.Location = new System.Drawing.Point(13, 222);
             this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(40, 20);
+            this.labelDNI.Size = new System.Drawing.Size(36, 18);
             this.labelDNI.TabIndex = 6;
             this.labelDNI.Text = "DNI";
             // 
@@ -288,7 +288,7 @@ namespace AppEscitorio
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(189, 16);
+            this.label3.Location = new System.Drawing.Point(206, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 25);
             this.label3.TabIndex = 2;
@@ -301,9 +301,9 @@ namespace AppEscitorio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.PaleGreen;
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(487, 227);
+            this.groupBox3.Location = new System.Drawing.Point(519, 227);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(528, 470);
+            this.groupBox3.Size = new System.Drawing.Size(496, 470);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -313,7 +313,7 @@ namespace AppEscitorio
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(235, 16);
+            this.label4.Location = new System.Drawing.Point(219, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 25);
             this.label4.TabIndex = 3;
@@ -332,6 +332,19 @@ namespace AppEscitorio
             this.groupBox4.Size = new System.Drawing.Size(1015, 130);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(27, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(178, 33);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Estudiantes";
             // 
             // textBoxBuscar
             // 
@@ -354,19 +367,6 @@ namespace AppEscitorio
             this.label2.Size = new System.Drawing.Size(85, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Buscar";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(27, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 33);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Estudiantes";
             // 
             // Form1
             // 
