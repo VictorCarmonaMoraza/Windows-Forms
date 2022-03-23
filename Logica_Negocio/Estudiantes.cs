@@ -9,12 +9,16 @@ namespace Logica_Negocio
     {
         private List<TextBox> listTextBox;
         private List<Label> listLabel;
+        private bool boolControles;
+        private PictureBox imagen;
 
 
-        public Estudiantes(List<TextBox> listTextBox, List<Label> listLabel)
+        public Estudiantes(List<TextBox> listTextBox, List<Label> listLabel, object[] objetos)
         {
             this.listTextBox = listTextBox;
             this.listLabel = listLabel;
+            boolControles = false;
+            this.imagen = (PictureBox)objetos[0];
         }
 
         public void Registrar()
@@ -27,6 +31,7 @@ namespace Logica_Negocio
                 listLabel[0].ForeColor = Color.Red;
                 //Ponemos el foco sobre ese campo de texto
                 listTextBox[0].Focus();
+                
             }
             else
             {
@@ -38,6 +43,7 @@ namespace Logica_Negocio
                     listLabel[1].ForeColor = Color.Red;
                     //Ponemos el foco sobre ese campo de texto
                     listTextBox[1].Focus();
+                    
                 }
                 else
                 {
@@ -63,9 +69,35 @@ namespace Logica_Negocio
                         }
                         else
                         {
-
+                            //Si ele amail es valido
+                            if (textBoxEvent.comprobarFormatoEmail(listTextBox[3].Text))
+                            {
+                                //imagen.Image : Obtiene el objeto imagen
+                                var imagenArray = uploadImage.ImageToByte(imagen.Image);
+                            }
+                            //En caso de que el amil no sea valido
+                            else{
+                                listLabel[3].Text = "Email no valido";
+                                //Color para el mensaje
+                                listLabel[3].ForeColor = Color.Red;
+                                //Ponemos el foco sobre ese campo de texto
+                                listTextBox[3].Focus();
+                            }
                         }
                     }
+                }
+                boolControles = true;
+                limpiarControles(boolControles);
+            }
+        }
+
+        public void limpiarControles(bool c)
+        {
+            if (c)
+            {
+                for (int i = 0; i < listTextBox.Count; i++)
+                {
+                    listTextBox[i].Text = string.Empty;
                 }
             }
         }

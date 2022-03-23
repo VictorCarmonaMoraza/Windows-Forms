@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +71,17 @@ namespace Logica_Negocio.Library
             {
                 e.Handled = true;
             }
+        }
+
+        /// <summary>
+        /// Metodo para comporbar si un email es valido
+        /// </summary>
+        /// <param name="email">email a validar</param>
+        /// <returns></returns>
+        public bool comprobarFormatoEmail(string email)
+        {
+            //IsValid comprueba si el email es valido
+            return new EmailAddressAttribute().IsValid(email);
         }
     }
 }

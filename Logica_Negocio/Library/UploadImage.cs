@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,5 +32,29 @@ namespace Logica_Negocio.Library
                 pictureBox.ImageLocation = fd.FileName;
             }
         }
+
+        /// <summary>
+        /// Comvertir una imagen en byte
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        public byte[] ImageToByte(Image imagenATransformar)
+        {
+            //Creamos el objeto de tipo ImageConverter
+            var converter = new ImageConverter();
+            //Convierte la imagen y la guarda en un array de byte
+            byte[] imagenConvertida = (byte[])converter.ConvertTo(imagenATransformar, typeof(byte[]));
+            ImagenString(imagenConvertida);
+            //Convierte el objeto en el tipo que especificamos
+            return imagenConvertida;
+        }
+
+        public string ImagenString(byte[] arrayImagen)
+        {
+            string ImagenStringConvertido = Encoding.Default.GetString(arrayImagen);
+            return ImagenStringConvertido;
+        }
+
+       
     }
 }
