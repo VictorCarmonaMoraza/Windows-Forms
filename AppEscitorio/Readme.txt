@@ -1,2 +1,2 @@
-﻿## 14 - Validando el email y convirtiendo la imagen del pictureBox en Bytes
+﻿## 15 - Instalando linq2db y creando las cadenas de conexion para SQL Server
 

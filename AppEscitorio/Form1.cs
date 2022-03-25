@@ -1,12 +1,7 @@
 ﻿using Logica_Negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppEscitorio
@@ -29,7 +24,8 @@ namespace AppEscitorio
             listLabel.Add(labelNombre);
             listLabel.Add(labelApellido);
             listLabel.Add(labelEmail);
-            estudiantes = new Estudiantes(listTextBox, listLabel);
+            Object[] objetos = { pictureBoxImage };
+            estudiantes = new Estudiantes(listTextBox, listLabel, objetos);
         }
 
         private void pictureBoxImage_Click(object sender, EventArgs e)
@@ -108,7 +104,6 @@ namespace AppEscitorio
                 labelEmail.Text = "Email";
             }
         }
-
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
             estudiantes.Registrar();
