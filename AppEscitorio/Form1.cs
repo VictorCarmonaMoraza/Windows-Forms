@@ -1,4 +1,5 @@
 ﻿using Logica_Negocio;
+using Logica_Negocio.Library;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,12 +10,14 @@ namespace AppEscitorio
     public partial class Form1 : Form
     {
         private Estudiantes estudiantes;
+        private Libreria librerias;
 
         public Form1()
         {
             InitializeComponent();
 
             var listTextBox = new List<TextBox>();
+            librerias = new Libreria();
             listTextBox.Add(textBoxDNI);
             listTextBox.Add(textBoxNombre);
             listTextBox.Add(textBoxApellido);
@@ -31,7 +34,7 @@ namespace AppEscitorio
         private void pictureBoxImage_Click(object sender, EventArgs e)
         {
             //pictureBoxImage : es el nombre que tiene la imagen 
-            estudiantes.uploadImage.CargarImagen(pictureBoxImage);
+            librerias.uploadImage.CargarImagen(pictureBoxImage);
         }
 
         private void textBoxDNI_TextChanged(object sender, EventArgs e)
@@ -50,7 +53,7 @@ namespace AppEscitorio
 
         private void textBoxDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            estudiantes.textBoxEvent.numberKeyPress(e);
+            librerias.textBoxEvent.numberKeyPress(e);
         }
 
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
@@ -69,7 +72,7 @@ namespace AppEscitorio
 
         private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            estudiantes.textBoxEvent.textKeyPress(e);
+            librerias.textBoxEvent.textKeyPress(e);
         }
 
         private void textBoxApellido_TextChanged(object sender, EventArgs e)
@@ -88,7 +91,7 @@ namespace AppEscitorio
 
         private void textBoxApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            estudiantes.textBoxEvent.textKeyPress(e);
+            librerias.textBoxEvent.textKeyPress(e);
         }
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
