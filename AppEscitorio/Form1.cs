@@ -10,14 +10,14 @@ namespace AppEscitorio
     public partial class Form1 : Form
     {
         private Estudiantes estudiantes;
-        private Libreria librerias;
+        //private Libreria librerias;
 
         public Form1()
         {
             InitializeComponent();
 
             var listTextBox = new List<TextBox>();
-            librerias = new Libreria();
+            //librerias = new Libreria();
             listTextBox.Add(textBoxDNI);
             listTextBox.Add(textBoxNombre);
             listTextBox.Add(textBoxApellido);
@@ -34,7 +34,7 @@ namespace AppEscitorio
         private void pictureBoxImage_Click(object sender, EventArgs e)
         {
             //pictureBoxImage : es el nombre que tiene la imagen 
-            librerias.uploadImage.CargarImagen(pictureBoxImage);
+            estudiantes.uploadImage.CargarImagen(pictureBoxImage);
         }
 
         private void textBoxDNI_TextChanged(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace AppEscitorio
 
         private void textBoxDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            librerias.textBoxEvent.numberKeyPress(e);
+            estudiantes.textBoxEvent.numberKeyPress(e);
         }
 
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace AppEscitorio
 
         private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            librerias.textBoxEvent.textKeyPress(e);
+            estudiantes.textBoxEvent.textKeyPress(e);
         }
 
         private void textBoxApellido_TextChanged(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace AppEscitorio
 
         private void textBoxApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            librerias.textBoxEvent.textKeyPress(e);
+            estudiantes.textBoxEvent.textKeyPress(e);
         }
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)

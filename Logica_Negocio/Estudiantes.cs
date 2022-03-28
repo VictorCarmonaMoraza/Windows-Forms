@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace Logica_Negocio
 {
-    public class Estudiantes
+    public class Estudiantes : Libreria
     {
         #region Campos
         private List<TextBox> listTextBox;
         private List<Label> listLabel;
         private bool boolControles;
         private PictureBox imagen;
-        private Libreria librerias;
+        //private Libreria librerias;
         #endregion Campos
 
         #region Constructor
@@ -24,7 +24,7 @@ namespace Logica_Negocio
             this.listTextBox = listTextBox;
             this.listLabel = listLabel;
             boolControles = false;
-            librerias = new Libreria();
+            //librerias = new Libreria();
             this.imagen = (PictureBox)objetos[0];
         }
         #endregion Constructor
@@ -43,7 +43,7 @@ namespace Logica_Negocio
                 listLabel[0].ForeColor = Color.Red;
                 //Ponemos el foco sobre ese campo de texto
                 listTextBox[0].Focus();
-                
+
             }
             else
             {
@@ -55,7 +55,7 @@ namespace Logica_Negocio
                     listLabel[1].ForeColor = Color.Red;
                     //Ponemos el foco sobre ese campo de texto
                     listTextBox[1].Focus();
-                    
+
                 }
                 else
                 {
@@ -82,14 +82,16 @@ namespace Logica_Negocio
                         else
                         {
                             //Si ele amail es valido
-                            if (librerias.textBoxEvent.comprobarFormatoEmail(listTextBox[3].Text))
+                            if (textBoxEvent.comprobarFormatoEmail(listTextBox[3].Text))
                             {
                                 //imagen.Image : Obtiene el objeto imagen
-                                var imagenArray = librerias.uploadImage.ImageToByte(imagen.Image);
+                                var imagenArray = uploadImage.ImageToByte(imagen.Image);
                                 Insertar();
+
                             }
                             //En caso de que el amil no sea valido
-                            else{
+                            else
+                            {
                                 listLabel[3].Text = "Email no valido";
                                 //Color para el mensaje
                                 listLabel[3].ForeColor = Color.Red;
@@ -124,14 +126,19 @@ namespace Logica_Negocio
         /// </summary>
         public void Insertar()
         {
-            var db = new Conexion();
-            db.Insert(new EstudiantePr2022()
-            {
-                nid = listTextBox[0].Text,
-                nombre = listTextBox[1].Text,
-                apellido = listTextBox[2].Text,
-                email = listTextBox[3].Text
-            });
+            //var db = new Conexion();
+            //db.Insert(new EstudiantePr2022()
+            //{
+            //    nid = listTextBox[0].Text,
+            //    nombre = listTextBox[1].Text,
+            //    apellido = listTextBox[2].Text,
+            //    email = listTextBox[3].Text
+            //});
+            _Estudiante.Value(e => e.nid, listTextBox[0].Text)
+                                    .Value(e => e.nombre, listTextBox[1].Text)
+                                    .Value(e => e.apellido, listTextBox[2].Text)
+                                    .Value(e => e.email, listTextBox[3].Text)
+                                    .Insert();
         }
     }
     #endregion Procedimientos
