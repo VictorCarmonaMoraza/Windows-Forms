@@ -2,6 +2,7 @@
 using Capa_Data.Entity;
 using LinqToDB;
 using Logica_Negocio.Library;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -126,20 +127,27 @@ namespace Logica_Negocio
         /// </summary>
         public void Insertar(byte[] imagen)
         {
-            //var db = new Conexion();
-            //db.Insert(new EstudiantePr2022()
-            //{
-            //    nid = listTextBox[0].Text,
-            //    nombre = listTextBox[1].Text,
-            //    apellido = listTextBox[2].Text,
-            //    email = listTextBox[3].Text
-            //});
-            _Estudiante.Value(e => e.nid, listTextBox[0].Text)
-                                    .Value(e => e.nombre, listTextBox[1].Text)
-                                    .Value(e => e.apellido, listTextBox[2].Text)
-                                    .Value(e => e.email, listTextBox[3].Text)
-                                    .Value(e => e.image, imagen)
-                                    .Insert();
+            BeginTransactionAsync();
+            try
+            {
+                _Estudiante.Value(e => e.nid, listTextBox[0].Text)
+                                                   .Value(e => e.nombre, listTextBox[1].Text)
+                                                   .Value(e => e.apellido, listTextBox[2].Text)
+                                                   .Value(e => e.email, listTextBox[3].Text)
+                                                   .Value(e => e.image, imagen)
+                                                   .Insert();
+
+                int data = Convert.ToInt16("k");
+
+                //Metodo de insertado satisfactoriamente
+                CommitTransaction();
+            }
+            catch (Exception  )
+            {
+                //Revertimos todos los cambios
+                RollbackTransaction();
+            }
+           
         }
     }
     #endregion Procedimientos
