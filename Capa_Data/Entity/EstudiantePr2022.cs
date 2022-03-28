@@ -15,5 +15,7 @@ namespace Capa_Data.Entity
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string email { get; set; }
+        //Array de byte que contendra la imagen
+        public byte[] image { get; set; }
     }
 }

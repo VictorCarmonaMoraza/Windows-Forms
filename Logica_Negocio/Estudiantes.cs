@@ -86,7 +86,7 @@ namespace Logica_Negocio
                             {
                                 //imagen.Image : Obtiene el objeto imagen
                                 var imagenArray = uploadImage.ImageToByte(imagen.Image);
-                                Insertar();
+                                Insertar(imagenArray);
 
                             }
                             //En caso de que el amil no sea valido
@@ -124,7 +124,7 @@ namespace Logica_Negocio
         /// <summary>
         /// Insertar en base de datos
         /// </summary>
-        public void Insertar()
+        public void Insertar(byte[] imagen)
         {
             //var db = new Conexion();
             //db.Insert(new EstudiantePr2022()
@@ -138,6 +138,7 @@ namespace Logica_Negocio
                                     .Value(e => e.nombre, listTextBox[1].Text)
                                     .Value(e => e.apellido, listTextBox[2].Text)
                                     .Value(e => e.email, listTextBox[3].Text)
+                                    .Value(e => e.image, imagen)
                                     .Insert();
         }
     }
