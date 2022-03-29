@@ -27,7 +27,11 @@ namespace AppEscitorio
             listLabel.Add(labelNombre);
             listLabel.Add(labelApellido);
             listLabel.Add(labelEmail);
-            Object[] objetos = { pictureBoxImage };
+            Object[] objetos = { 
+                pictureBoxImage,
+                Properties.Resources.bbdd,
+                dataGridView1
+            };
             estudiantes = new Estudiantes(listTextBox, listLabel, objetos);
         }
 

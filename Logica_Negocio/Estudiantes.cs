@@ -1,4 +1,5 @@
-﻿using LinqToDB;
+﻿using Capa_Data.Entity;
+using LinqToDB;
 using Logica_Negocio.Library;
 using System;
 using System.Collections.Generic;
@@ -11,21 +12,31 @@ namespace Logica_Negocio
     public class Estudiantes : Libreria
     {
         #region Campos
+
         private List<TextBox> listTextBox;
         private List<Label> listLabel;
-        private bool boolControles;
+        private Bitmap _imagBitMap;
         private PictureBox imagen;
-        //private Libreria librerias;
+        private DataGridView _dataGridView;
+
         #endregion Campos
+
+        #region Variables globales
+
+        private const int _NUM_PAGINA = 2;
+        private const int _REG_POR_PAGINA = 1;
+
+        #endregion Variables globales
 
         #region Constructor
         public Estudiantes(List<TextBox> listTextBox, List<Label> listLabel, object[] objetos)
         {
             this.listTextBox = listTextBox;
             this.listLabel = listLabel;
-            boolControles = false;
-            //librerias = new Libreria();
+            _imagBitMap = (Bitmap)objetos[1];
             this.imagen = (PictureBox)objetos[0];
+            this._dataGridView = (DataGridView)objetos[2];
+            RestablecerControles();
         }
         #endregion Constructor
 
@@ -55,7 +66,6 @@ namespace Logica_Negocio
                     listLabel[1].ForeColor = Color.Red;
                     //Ponemos el foco sobre ese campo de texto
                     listTextBox[1].Focus();
-
                 }
                 else
                 {
@@ -111,26 +121,10 @@ namespace Logica_Negocio
                         }
                     }
                 }
-                boolControles = true;
-                //limpiarControles(boolControles);
             }
         }
 
-        /// <summary>
-        /// Limpiar todos los controles
-        /// </summary>
-        /// <param name="c"></param>
-        public void limpiarControles(bool boolControles)
-        {
-            if (boolControles)
-            {
-                for (int i = 0; i < listTextBox.Count; i++)
-                {
-                    listTextBox[i].Text = string.Empty;
-                }
-            }
-        }
-
+        #region Procedimientos para BBDD
         /// <summary>
         /// Insertar en base de datos
         /// </summary>
@@ -150,13 +144,74 @@ namespace Logica_Negocio
 
                 //Metodo de insertado satisfactoriamente
                 CommitTransaction();
+                RestablecerControles();
             }
-            catch (Exception  )
+            catch (Exception)
             {
                 //Revertimos todos los cambios
                 RollbackTransaction();
             }
         }
+        
+        public void SearchEstudiante(string campo)
+        {
+            List<EstudiantePr2022> query = new List<EstudiantePr2022>();
+            //Paginador
+            int inicio = (_NUM_PAGINA - 1) * _REG_POR_PAGINA;
+            //No filtramos ningun estudiante
+            if (campo.Equals(""))
+            {
+                query = _Estudiante.ToList();
+            }
+            else
+            {
+                //Buscamos si hay coicidencia de alguno de los campos
+                query = _Estudiante.Where(c => c.nid.StartsWith(campo) || c.nombre.StartsWith(campo)
+                || c.apellido.StartsWith(campo)).ToList();
+            }
+            //Verficar si tenemos informacion
+            if (query.Count>0)
+            {
+                //Columna de las cuales obtener datos
+                _dataGridView.DataSource = query.Select(c=>new { 
+                    c.id,
+                    c.nid,
+                    c.nombre,
+                    c.apellido,
+                    c.email,
+                }).ToList();
+                //Skip(inicio).Take(_REG_POR_PAGINA).ToList();
+            }
+        }
+
+        #endregion Procedimientos para BBDD
+
+        /// <summary>
+        /// Metodo para restablecer los controles despues de hacer la transaccion
+        /// </summary>
+        private void RestablecerControles()
+        {
+            imagen.Image = _imagBitMap;
+            listLabel[0].Text = "Nid";
+            listLabel[1].Text = "Nombre";
+            listLabel[2].Text = "Apellido";
+            listLabel[3].Text = "Email";
+
+            //Le damos color a las label
+            listLabel[0].ForeColor = Color.LightSlateGray;
+            listLabel[1].ForeColor = Color.LightSlateGray;
+            listLabel[2].ForeColor = Color.LightSlateGray;
+            listLabel[3].ForeColor = Color.LightSlateGray;
+
+            listTextBox[0].Text="";
+            listTextBox[1].Text="";
+            listTextBox[2].Text="";
+            listTextBox[3].Text="";
+
+            SearchEstudiante("");
+        }
+
+        #region procedemientos anulados
 
         /// <summary>
         /// Comporbamos si tenemos el email en la base de datos
@@ -181,7 +236,22 @@ namespace Logica_Negocio
         //    return emailRepetido;
         //}
 
+        /// <summary>
+        /// Limpiar todos los controles
+        /// </summary>
+        /// <param name="c"></param>
+        //public void limpiarControles(bool boolControles)
+        //{
+        //    if (boolControles)
+        //    {
+        //        for (int i = 0; i < listTextBox.Count; i++)
+        //        {
+        //            listTextBox[i].Text = string.Empty;
+        //        }
+        //    }
+        //}
 
+        #endregion procedemientos anulados
     }
     #endregion Procedimientos
 }

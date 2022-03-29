@@ -1,5 +1,3 @@
-﻿## 21 -  Verificando el email del estudiante si ya esta regitrado
+﻿## 22 - Creando los procedimientos para obtener los registros de las tablas
 
-Comporbamos que email se encuentra ya en base de datos y por lo tanto no dejamos grabar el usuario.
-He comentado el metodo limpir comtroles momentanemamente porque me quita que se muestre el mensaje de error cuando
-se produce un error el email 
+## 23 - Mostrando la lista de estudiantes registrados en un datagridview
