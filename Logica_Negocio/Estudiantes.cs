@@ -1,10 +1,9 @@
-﻿using Capa_Data;
-using Capa_Data.Entity;
-using LinqToDB;
+﻿using LinqToDB;
 using Logica_Negocio.Library;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Logica_Negocio
@@ -85,12 +84,22 @@ namespace Logica_Negocio
                             //Si ele amail es valido
                             if (textBoxEvent.comprobarFormatoEmail(listTextBox[3].Text))
                             {
-                                //imagen.Image : Obtiene el objeto imagen
-                                var imagenArray = uploadImage.ImageToByte(imagen.Image);
-                                Insertar(imagenArray);
-
+                                //Obtenemos toda la informacion de la tabla estudiante
+                                var user = _Estudiante.Where(u => u.email.Equals(listTextBox[3].Text)).ToList();
+                                if (user.Count.Equals(0))
+                                {
+                                    //imagen.Image : Obtiene el objeto imagen
+                                    var imagenArray = uploadImage.ImageToByte(imagen.Image);
+                                    Insertar(imagenArray);
+                                }
+                                else
+                                {
+                                    listLabel[3].Text = "Email ya registrado";
+                                    listLabel[3].ForeColor = Color.Red;
+                                    listTextBox[3].Focus();
+                                }
                             }
-                            //En caso de que el amil no sea valido
+                            //En caso de que el email no sea valido
                             else
                             {
                                 listLabel[3].Text = "Email no valido";
@@ -103,7 +112,7 @@ namespace Logica_Negocio
                     }
                 }
                 boolControles = true;
-                limpiarControles(boolControles);
+                //limpiarControles(boolControles);
             }
         }
 
@@ -137,7 +146,7 @@ namespace Logica_Negocio
                                                    .Value(e => e.image, imagen)
                                                    .Insert();
 
-                int data = Convert.ToInt16("k");
+                //int data = Convert.ToInt16("k");
 
                 //Metodo de insertado satisfactoriamente
                 CommitTransaction();
@@ -147,8 +156,32 @@ namespace Logica_Negocio
                 //Revertimos todos los cambios
                 RollbackTransaction();
             }
-           
         }
+
+        /// <summary>
+        /// Comporbamos si tenemos el email en la base de datos
+        /// </summary>
+        /// <param name="elementoLista">Email a comporbar</param>
+        //public bool comprobarEmailRepetido(string elementoLista)
+        //{
+        //    bool emailRepetido = false;
+        //    //Obtenemos toda la informacion de la tabla estudiante
+        //    var user = _Estudiante.Where(u => u.email.Equals(elementoLista)).ToList();
+        //    if (user.Count.Equals(0))
+        //    {
+        //        emailRepetido = false;
+        //    }
+        //    else
+        //    {
+        //        listTextBox[3].Text = "Email ya registtrado";
+        //        listTextBox[3].ForeColor = Color.Red;
+        //        listTextBox[3].Focus();
+        //        emailRepetido = true;
+        //    }
+        //    return emailRepetido;
+        //}
+
+
     }
     #endregion Procedimientos
 }
