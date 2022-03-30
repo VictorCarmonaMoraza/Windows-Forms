@@ -98,6 +98,11 @@ namespace AppEscitorio
             estudiantes.textBoxEvent.textKeyPress(e);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
             //Si la propiedad es igual a vacio
@@ -111,9 +116,25 @@ namespace AppEscitorio
                 labelEmail.Text = "Email";
             }
         }
+
+        /// <summary>
+        /// Insertamos elementos en la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
             estudiantes.Registrar();
+        }
+
+        /// <summary>
+        /// Filtramos en datagriew por texto a buscar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            estudiantes.SearchEstudiante(textBoxBuscar.Text);
         }
     }
 }

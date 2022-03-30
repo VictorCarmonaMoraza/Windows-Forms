@@ -181,6 +181,27 @@ namespace Logica_Negocio
                     c.email,
                 }).ToList();
                 //Skip(inicio).Take(_REG_POR_PAGINA).ToList();
+
+                //Ocultar una columna
+                _dataGridView.Columns[0].Visible = false;
+
+                //Darle estilos a las columnas
+                _dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.Aquamarine;
+                _dataGridView.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            }
+            else
+            {
+                _dataGridView.DataSource = query.Select(c => new
+                {
+                    c.nid,
+                    c.nombre,
+                    c.apellido,
+                    c.email,
+                }).ToList();
+
+                //Darle estilos a las columnas
+                _dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.Aquamarine;
+                _dataGridView.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
         }
 

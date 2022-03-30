@@ -1,3 +1,3 @@
-﻿## 22 - Creando los procedimientos para obtener los registros de las tablas
+﻿## 24 - Personalizando el datagridview que muestra la lista de estudiantes
 
-## 23 - Mostrando la lista de estudiantes registrados en un datagridview
+Podemos introducir en la caja de texto de Buscar y nos filtrara el mostrado de registros.
