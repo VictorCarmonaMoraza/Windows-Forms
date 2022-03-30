@@ -18,6 +18,7 @@ namespace Logica_Negocio
         private Bitmap _imagBitMap;
         private PictureBox imagen;
         private DataGridView _dataGridView;
+        private NumericUpDown _numericUpDown;
 
         #endregion Campos
 
@@ -36,6 +37,7 @@ namespace Logica_Negocio
             _imagBitMap = (Bitmap)objetos[1];
             this.imagen = (PictureBox)objetos[0];
             this._dataGridView = (DataGridView)objetos[2];
+            this._numericUpDown = (NumericUpDown)objetos[3];
             RestablecerControles();
         }
         #endregion Constructor

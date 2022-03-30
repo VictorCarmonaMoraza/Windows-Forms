@@ -1,3 +1,3 @@
-﻿## 24 - Personalizando el datagridview que muestra la lista de estudiantes
+﻿## 25 - Agregando los controles para paginar
 
-Podemos introducir en la caja de texto de Buscar y nos filtrara el mostrado de registros.
+Se agregan controles para paginar pero aun sin funcionalidad
