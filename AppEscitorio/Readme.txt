@@ -1,1 +1,1 @@
-﻿## 26 - Creando el paginador para paginar los registros
+﻿## 27 - Implementando el paginador para paginar los registros

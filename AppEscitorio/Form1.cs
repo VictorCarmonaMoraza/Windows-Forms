@@ -138,5 +138,25 @@ namespace AppEscitorio
         {
             estudiantes.SearchEstudiante(textBoxBuscar.Text);
         }
+
+        private void buttonPrimero_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Primero");
+        }
+
+        private void buttonAnterior_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Anterior");
+        }
+
+        private void buttonSiguiente_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Siguiente");
+        }
+
+        private void buttonUltimo_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Ultimo");
+        }
     }
 }

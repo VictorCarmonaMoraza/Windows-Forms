@@ -8,17 +8,17 @@ namespace Logica_Negocio.Library
 	{
 		private List<T> _dataList;
 		private Label _label;
-        private readonly int reg_Por_Pagina;
         private static int maxReg;
         private static int _reg_por_pagina;
         private static int pageCount;
         private static int numPagi = 1;
+        
 
-        public Paginador(List<T> dataList, Label label, int _reg_por_pagina)
+        public Paginador(List<T> dataList, Label label, int reg_por_pagina)
         {
             _dataList = dataList;
             _label = label;
-            reg_Por_Pagina = _reg_por_pagina;
+            _reg_por_pagina = reg_por_pagina;
             cargarDatos();
         }
         private void cargarDatos()

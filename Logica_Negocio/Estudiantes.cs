@@ -19,13 +19,15 @@ namespace Logica_Negocio
         private PictureBox imagen;
         private DataGridView _dataGridView;
         private NumericUpDown _numericUpDown;
+        private Paginador<EstudiantePr2022> _paginador;
+        private List<EstudiantePr2022> listEstudiante;
 
         #endregion Campos
 
         #region Variables globales
 
-        private const int _NUM_PAGINA = 2;
-        private const int _REG_POR_PAGINA = 1;
+        private  int _num_pagina = 2;
+        private  int _reg_por_pagina = 1;
 
         #endregion Variables globales
 
@@ -159,7 +161,7 @@ namespace Logica_Negocio
         {
             List<EstudiantePr2022> query = new List<EstudiantePr2022>();
             //Paginador
-            int inicio = (_NUM_PAGINA - 1) * _REG_POR_PAGINA;
+            int inicio = (_num_pagina - 1) * _reg_por_pagina;
             //No filtramos ningun estudiante
             if (campo.Equals(""))
             {
@@ -181,8 +183,9 @@ namespace Logica_Negocio
                     c.nombre,
                     c.apellido,
                     c.email,
-                }).ToList();
-                //Skip(inicio).Take(_REG_POR_PAGINA).ToList();
+                }).Skip(inicio).Take(_reg_por_pagina).ToList();
+                //Con esto solo muestra todos los registros
+                //.ToList();
 
                 //Ocultar una columna
                 _dataGridView.Columns[0].Visible = false;
@@ -230,7 +233,33 @@ namespace Logica_Negocio
             listTextBox[1].Text="";
             listTextBox[2].Text="";
             listTextBox[3].Text="";
+            listEstudiante = _Estudiante.ToList();
+            //Comporbamos si tiene datos
+            if (listEstudiante.Count>0)
+            {
+                _paginador = new Paginador<EstudiantePr2022>(listEstudiante, listLabel[4], _reg_por_pagina);
+            }
+            SearchEstudiante("");
 
+        }
+
+        public void Paginador(string metodo)
+        {
+            switch (metodo)
+            {
+                case "Primero":
+                    _num_pagina = _paginador.primero();
+                    break;
+                case "Anterior":
+                    _num_pagina = _paginador.anterior();
+                    break;
+                case "Siguiente":
+                    _num_pagina = _paginador.siguiente();
+                    break;
+                case "Ultimo":
+                    _num_pagina = _paginador.ultimo();
+                    break;
+            }
             SearchEstudiante("");
         }
 
