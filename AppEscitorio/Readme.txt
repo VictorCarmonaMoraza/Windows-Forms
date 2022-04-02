@@ -1,3 +1,1 @@
-﻿## 28 - Controlando el paginador desde a interfaz de usuario
-
-## 29 - Creando los procedimientos para obtener la informacion de estudiante 
+﻿## 30 - Actualizando los registros de las tablas que estan en la base de datos 

@@ -103,15 +103,21 @@ namespace Logica_Negocio
                                 var user = _Estudiante.Where(u => u.email.Equals(listTextBox[3].Text)).ToList();
                                 if (user.Count.Equals(0))
                                 {
-                                    //imagen.Image : Obtiene el objeto imagen
-                                    var imagenArray = uploadImage.ImageToByte(imagen.Image);
-                                    Insertar(imagenArray);
+                                    Insertar();
                                 }
                                 else
                                 {
-                                    listLabel[3].Text = "Email ya registrado";
-                                    listLabel[3].ForeColor = Color.Red;
-                                    listTextBox[3].Focus();
+                                    //_idEstudinate es el estudiante que estamos selccionanod en nuestra tabla en la interfaz de usaurio
+                                    if (user[0].id.Equals(_idEstudinate))
+                                    {
+                                        Insertar();
+                                    }
+                                    else
+                                    {
+                                        listLabel[3].Text = "Email ya registrado";
+                                        listLabel[3].ForeColor = Color.Red;
+                                        listTextBox[3].Focus();
+                                    }
                                 }
                             }
                             //En caso de que el email no sea valido
@@ -133,17 +139,35 @@ namespace Logica_Negocio
         /// <summary>
         /// Insertar en base de datos
         /// </summary>
-        public void Insertar(byte[] imagen)
+        public void Insertar()
         {
             BeginTransactionAsync();
             try
             {
-                _Estudiante.Value(e => e.nid, listTextBox[0].Text)
+
+                //imagen.Image : Obtiene el objeto imagen
+                var imagenArray = uploadImage.ImageToByte(imagen.Image);
+
+                switch (_accion)
+                {
+                    case "insert":
+                        _Estudiante.Value(e => e.nid, listTextBox[0].Text)
                                                    .Value(e => e.nombre, listTextBox[1].Text)
                                                    .Value(e => e.apellido, listTextBox[2].Text)
                                                    .Value(e => e.email, listTextBox[3].Text)
-                                                   .Value(e => e.image, imagen)
+                                                   .Value(e => e.image, imagenArray)
                                                    .Insert();
+                        break;
+                    case "update":
+                        _Estudiante.Where(e => e.id.Equals(_idEstudinate))
+                                                  .Set(e => e.nombre, listTextBox[1].Text)
+                                                  .Set(e => e.apellido, listTextBox[2].Text)
+                                                  .Set(e => e.email, listTextBox[3].Text)
+                                                  .Set(e => e.image, imagenArray)
+                                                  .Update();
+                        break;
+                }
+                
 
                 //int data = Convert.ToInt16("k");
 
@@ -232,6 +256,9 @@ namespace Logica_Negocio
         /// </summary>
         private void RestablecerControles()
         {
+            _accion = "insert";
+            _num_pagina = 1;
+            _idEstudinate = 0;
             imagen.Image = _imagBitMap;
             listLabel[0].Text = "Nid";
             listLabel[1].Text = "Nombre";
