@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,17 @@ namespace Logica_Negocio.Library
             return ImagenStringConvertido;
         }
 
-       
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            //MemoryStream ms = new MemoryStream(byteArrayIn);
+            //Image _returnImage = Image.FromStream(ms);
+            //return _returnImage;
+
+            //Simplificado
+            return Image.FromStream(new MemoryStream(byteArrayIn));
+        }
+
+
+
     }
 }

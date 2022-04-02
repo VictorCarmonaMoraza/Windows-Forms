@@ -21,13 +21,14 @@ namespace Logica_Negocio
         private NumericUpDown _numericUpDown;
         private Paginador<EstudiantePr2022> _paginador;
         private List<EstudiantePr2022> listEstudiante;
+        private string _accion = "insert";
 
         #endregion Campos
 
         #region Variables globales
 
-        private  int _num_pagina = 2;
-        private  int _reg_por_pagina = 1;
+        private int _num_pagina = 2;
+        private int _reg_por_pagina = 1;
 
         #endregion Variables globales
 
@@ -156,7 +157,7 @@ namespace Logica_Negocio
                 RollbackTransaction();
             }
         }
-        
+
         public void SearchEstudiante(string campo)
         {
             List<EstudiantePr2022> query = new List<EstudiantePr2022>();
@@ -174,22 +175,25 @@ namespace Logica_Negocio
                 || c.apellido.StartsWith(campo)).ToList();
             }
             //Verficar si tenemos informacion
-            if (query.Count>0)
+            if (query.Count > 0)
             {
                 //Columna de las cuales obtener datos
-                _dataGridView.DataSource = query.Select(c=>new { 
+                _dataGridView.DataSource = query.Select(c => new
+                {
                     c.id,
                     c.nid,
                     c.nombre,
                     c.apellido,
                     c.email,
+                    c.image
                 }).Skip(inicio).Take(_reg_por_pagina).ToList();
                 //Con esto solo muestra todos los registros
                 //.ToList();
 
-                //Ocultar una columna
+                //Ocultamos la columna Id
                 _dataGridView.Columns[0].Visible = false;
-
+                //Oucltamos la columna imagen
+                _dataGridView.Columns[5].Visible = false;
                 //Darle estilos a las columnas
                 _dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.Aquamarine;
                 _dataGridView.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
@@ -201,7 +205,7 @@ namespace Logica_Negocio
                     c.nid,
                     c.nombre,
                     c.apellido,
-                    c.email,
+                    c.email
                 }).ToList();
 
                 //Darle estilos a las columnas
@@ -212,6 +216,17 @@ namespace Logica_Negocio
 
         #endregion Procedimientos para BBDD
 
+        public void Registro_Paginas()
+        {
+            _num_pagina = 1;
+            _reg_por_pagina = (int)_numericUpDown.Value;
+            var list = _Estudiante.ToList();
+            if (0 < list.Count)
+            {
+                _paginador = new Paginador<EstudiantePr2022>(listEstudiante, listLabel[4], _reg_por_pagina);
+                SearchEstudiante("");
+            }
+        }
         /// <summary>
         /// Metodo para restablecer los controles despues de hacer la transaccion
         /// </summary>
@@ -229,13 +244,13 @@ namespace Logica_Negocio
             listLabel[2].ForeColor = Color.LightSlateGray;
             listLabel[3].ForeColor = Color.LightSlateGray;
 
-            listTextBox[0].Text="";
-            listTextBox[1].Text="";
-            listTextBox[2].Text="";
-            listTextBox[3].Text="";
+            listTextBox[0].Text = "";
+            listTextBox[1].Text = "";
+            listTextBox[2].Text = "";
+            listTextBox[3].Text = "";
             listEstudiante = _Estudiante.ToList();
-            //Comporbamos si tiene datos
-            if (listEstudiante.Count>0)
+            //Comprobamos si tiene datos
+            if (listEstudiante.Count > 0)
             {
                 _paginador = new Paginador<EstudiantePr2022>(listEstudiante, listLabel[4], _reg_por_pagina);
             }
@@ -261,6 +276,30 @@ namespace Logica_Negocio
                     break;
             }
             SearchEstudiante("");
+        }
+        private int _idEstudinate = 0;
+        /// <summary>
+        /// Obtenemos valor del estudiante seleccionado
+        /// </summary>
+        public void GetEstudiante()
+        {
+            _accion = "update";
+            _idEstudinate = Convert.ToInt16(_dataGridView.CurrentRow.Cells[0].Value);
+            listTextBox[0].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[1].Value);
+            listTextBox[1].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[2].Value);
+            listTextBox[2].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[3].Value);
+            listTextBox[3].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[4].Value);
+            try
+            {
+                //Creamos un arreglo de tipo byte
+                //aqui convertiremos el dato que nos proporciona el gridview a un array de imagen
+                byte[] arrayImage = (byte[])_dataGridView.CurrentRow.Cells[5].Value;
+                imagen.Image = uploadImage.byteArrayToImage(arrayImage);
+            }
+            catch (Exception)
+            {
+                imagen.Image = _imagBitMap;
+            }
         }
 
         #region procedemientos anulados
