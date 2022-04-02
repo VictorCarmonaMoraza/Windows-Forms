@@ -254,7 +254,7 @@ namespace Logica_Negocio
         /// <summary>
         /// Metodo para restablecer los controles despues de hacer la transaccion
         /// </summary>
-        private void RestablecerControles()
+        public void RestablecerControles()
         {
             _accion = "insert";
             _num_pagina = 1;
@@ -326,6 +326,23 @@ namespace Logica_Negocio
             catch (Exception)
             {
                 imagen.Image = _imagBitMap;
+            }
+        }
+
+        public void Eliminar()
+        {
+            if (_idEstudinate.Equals(0))
+            {
+                MessageBox.Show("Seleccione un estudiante");
+            }
+            else
+            {
+                if (MessageBox.Show("Estas seguro de eliminar el estudiante?","Eliminar estudiante",
+                    MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    _Estudiante.Where(c => c.id.Equals(_idEstudinate)).Delete();
+                    RestablecerControles();
+                }
             }
         }
 

@@ -107,6 +107,10 @@
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="Readme.txt" />
+    <None Include="Resources\Right-1.png" />
+    <None Include="Resources\Right.png" />
+    <None Include="Resources\Left.png" />
+    <None Include="Resources\Left-1.png" />
     <None Include="Resources\bbdd.jpg" />
     <None Include="Resources\Delete.png" />
     <None Include="Resources\Cancelar.png" />

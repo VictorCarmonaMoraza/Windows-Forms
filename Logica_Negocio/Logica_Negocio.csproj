@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Estudiantes.cs" />
     <Compile Include="Library\Libreria.cs" />
+    <Compile Include="Library\Paginador.cs" />
     <Compile Include="Library\TextBoxEvent.cs" />
     <Compile Include="Library\UploadImage.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />

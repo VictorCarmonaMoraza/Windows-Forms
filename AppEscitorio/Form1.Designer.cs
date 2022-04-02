@@ -30,12 +30,12 @@ namespace AppEscitorio
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonElliminar = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@ namespace AppEscitorio
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.BackColor = System.Drawing.Color.DarkKhaki;
-            this.groupBox2.Controls.Add(this.buttonElliminar);
+            this.groupBox2.Controls.Add(this.buttonEliminar);
             this.groupBox2.Controls.Add(this.buttonCancelar);
             this.groupBox2.Controls.Add(this.buttonAgregar);
             this.groupBox2.Controls.Add(this.labelEmail);
@@ -132,20 +132,21 @@ namespace AppEscitorio
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // buttonElliminar
+            // buttonEliminar
             // 
-            this.buttonElliminar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonElliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonElliminar.FlatAppearance.BorderSize = 0;
-            this.buttonElliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.buttonElliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonElliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonElliminar.Image = global::AppEscitorio.Properties.Resources.Delete;
-            this.buttonElliminar.Location = new System.Drawing.Point(146, 382);
-            this.buttonElliminar.Name = "buttonElliminar";
-            this.buttonElliminar.Size = new System.Drawing.Size(116, 46);
-            this.buttonElliminar.TabIndex = 6;
-            this.buttonElliminar.UseVisualStyleBackColor = false;
+            this.buttonEliminar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEliminar.FlatAppearance.BorderSize = 0;
+            this.buttonEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.buttonEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEliminar.Image = global::AppEscitorio.Properties.Resources.Delete;
+            this.buttonEliminar.Location = new System.Drawing.Point(146, 382);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(116, 46);
+            this.buttonEliminar.TabIndex = 6;
+            this.buttonEliminar.UseVisualStyleBackColor = false;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // buttonCancelar
             // 
@@ -161,6 +162,7 @@ namespace AppEscitorio
             this.buttonCancelar.Size = new System.Drawing.Size(105, 46);
             this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonAgregar
             // 
@@ -426,14 +428,14 @@ namespace AppEscitorio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 44);
             this.dataGridView1.Name = "dataGridView1";
@@ -559,7 +561,7 @@ namespace AppEscitorio
         private System.Windows.Forms.TextBox textBoxDNI;
         private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.Button buttonCancelar;
-        private System.Windows.Forms.Button buttonElliminar;
+        private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;

@@ -190,5 +190,15 @@ namespace AppEscitorio
                 estudiante.GetEstudiante();
             }
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            estudiante.RestablecerControles();
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            estudiante.Eliminar();
+        }
     }
 }
